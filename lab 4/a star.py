@@ -163,5 +163,5 @@ def a_star(initial, goal):
     print("No solution found.")
 
 
-# Execute the program
+
 a_star(initial, goal)
