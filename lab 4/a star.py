@@ -2,7 +2,7 @@
 import heapq
 from itertools import count
 
-# 0 represents the blank tile
+
 initial = (1, 2, 3,
            4, 5, 6,
            7, 0, 8)
@@ -12,7 +12,6 @@ goal = (1, 2, 3,
         7, 8, 0)
 
 
-# Calculate misplaced tiles heuristic
 def misplaced_tiles(state, goal):
     misplaced = 0
 
@@ -23,7 +22,6 @@ def misplaced_tiles(state, goal):
     return misplaced
 
 
-# Print the puzzle board
 def print_board(state):
     for i in range(0, 9, 3):
         print(" ".join(
@@ -32,7 +30,6 @@ def print_board(state):
         ))
 
 
-# Generate neighboring states
 def get_neighbors(state):
     blank = state.index(0)
     row, col = divmod(blank, 3)
@@ -64,7 +61,7 @@ def get_neighbors(state):
     return neighbors
 
 
-# Reconstruct the solution path
+
 def reconstruct_path(parent, state):
     path = []
 
@@ -75,7 +72,7 @@ def reconstruct_path(parent, state):
     return path[::-1]
 
 
-# A* search using misplaced tiles
+
 def a_star(initial, goal):
     print("A* SEARCH USING MISPLACED TILES")
 
